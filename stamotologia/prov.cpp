@@ -69,3 +69,24 @@ void InputInt(int* k)
 		}
 	} while (f);
 }
+char* strcpy_d(char* str_p, const char* str_c) 
+{
+	int len_p, len_c;
+	if (str_p == NULL) {
+		str_p = (char*)malloc(sizeof(char));
+		str_p[0] = '\0';
+	}
+	len_p = strlen(str_p);
+	len_c = strlen(str_c);
+	if (len_p >= len_c)
+		strcpy(str_p, str_c);
+	else {
+		if ((len_c % 8) != 0) {
+			len_c = len_c / 8;
+			len_c++;
+			str_p = (char*)realloc(str_p, len_c * sizeof(char));
+			strcpy(str_p, str_c);
+		}
+	}
+	return str_p;
+}
