@@ -1,18 +1,11 @@
 #include "prov.h"
+typedef struct {
+    int branch_id;
+    char* branch_street;
+    int branch_house;
+} branch;
 
-class branch
-{
-private:
-	int BranchId;
-	string Street;
-	int House;
-public:
-	branch(int id, string street, int house);
-	branch();
+branch branch_input();
+branch branch_init(int, const char*, int);
+void branch_output(branch);
 
-	~branch();
-
-	void InputBranch();
-
-	void OutputBranch();
-};

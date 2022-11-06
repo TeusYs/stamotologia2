@@ -10,15 +10,11 @@
 #include <conio.h>
 #include <time.h> 
 #include <clocale>
-//#include <string.h>
 #include <stdint.h>
 #include <stdbool.h>
 using namespace std;
 
-bool SavedString(char* p);
-
-void InputString(char* p);
-
-bool SaveInt(char* p);
-
-void InputInt(int* k);
+int get_int(void);
+char* get_string(void); //Функция ввод строки произвольной длины (кратной 8 байтам).
+char* strcpy_d(char*, const char*);
+float get_float(void);

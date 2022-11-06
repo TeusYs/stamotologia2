@@ -1,27 +1,26 @@
 #include "dentist.h"
-dentist::dentist(int id, int ex, string name) {
-	DentistId=id;
-	exp=ex;
-	fio=name;
-}
 
-dentist::dentist() {
-}
+dentist dentist_input() {
+	dentist Dentist{};
+	do {
+		printf("Введите ФИО дантиста: ");
+		Dentist.dentist_FIO = get_string();
+	} while (Dentist.dentist_FIO[0] == 0);
+	printf("Введите id Дантиста. ");
+	Dentist.dentist_id=get_int();
+	printf("Введите стаж Дантиста. ");
+	Dentist.dentist_exp = get_int();
+	return Dentist;
+};
 
-dentist::~dentist() {
-}
-void dentist::InputDentist() {
-	printf("Введите ID массажиста: ");
-	cin >> DentistId;
-	while (getchar() != '\n');
-	printf("Введите стаж массажиста: ");
-	cin >> exp;
-	while (getchar() != '\n');
-	printf("Введите ФИО массажиста: ");
-	getline(cin, fio);
-}
+dentist dentist_init(int id, const char* FIO,int exp) {
+	dentist Dentist{};
+	Dentist.dentist_FIO = strcpy_d(Dentist.dentist_FIO, FIO);
+	Dentist.dentist_id = id;
+	Dentist.dentist_exp = exp;
+	return Dentist;
+};
 
-void dentist::OutputDentist() {
-	printf("\n<ID>\t\t<ФИО>\t\t<Стаж>\n");
-	cout<<DentistId<<"\t\t" << fio << "\t\t" << exp << endl;
-}
+void dentist_output(dentist obj) {
+	printf("ФИО дантиста: %s cтаж работы: %d\n", obj.dentist_FIO, obj.dentist_exp);
+};

@@ -1,18 +1,10 @@
 #include "prov.h"
+typedef struct {
+    int service_id;
+    char* service_name;
+    int service_price;
+} service;
 
-class service
-{
-private:
-	int ServiceId;
-	int Price;
-	string Title;
-public:
-	service(int id, string title, int price);
-	service();
-
-	~service();
-
-	void InputService();
-
-	void OutputService();
-};
+service service_input();
+service service_init(int,const char*, int);
+void service_output(service);

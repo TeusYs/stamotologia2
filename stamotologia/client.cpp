@@ -1,13 +1,13 @@
 #include "client.h"
 
 client client_input() {
-	client Client;
+	client Client{};
 	do {
 		printf("Введите ФИО клиента: ");
-		InputString(Client.client_FIO);
+		Client.client_FIO = get_string();
 	} while (Client.client_FIO[0] == 0);
 	printf("Введите id клиента. ");
-	InputInt(&Client.client_id);
+	Client.client_id = get_int();
 	return Client;
 };
 

@@ -1,39 +1,35 @@
 ﻿#include <iostream>
-#include "prov.h"
 #include "table.h"
 
 
 int main()
 {
-	int count;
-	setlocale(LC_ALL, "Russian");
-	SetConsoleCP(1251);
-	SetConsoleOutputCP(1251);
-	client CL(10, "Владимир Иванов");
-	CL.OutputClient();
-	client CL1;
-	cout << endl;
-	CL1.InputClient();
-	CL1.OutputClient();
-	dentist DN(10,5, "Владимир Иванов");
-	DN.OutputDentist();
-	dentist DN1;
-	cout << endl;
-	DN1.InputDentist();
-	DN1.OutputDentist();
-	branch BR(10,"Иванова",5);
-	BR.OutputBranch();
-	branch BR1;
-	cout << endl;
-	BR1.InputBranch();
-	BR1.OutputBranch();
-	cout << "\nВведите размер массива объектов: ";
-	cin >> count;
-	client* arrDeal = new client[count];
-	for (int i = 0; i < count; i++) {
-		(arrDeal + i)->InputClient();
-		puts("");
-		(arrDeal + i)->OutputClient();
-		cout << "\n" << endl;
-	}
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
+    printf("Введите количество сделок. ");
+    int count;
+    while ((count = get_int()) < 1);
+    regist* regists = (regist*)malloc(count * sizeof(regist));
+    puts("Введите данные.");
+    for (int i = 0; i < count; i++) {
+        printf("Сделка номер %d:\n", i + 1);
+        regists[i] = regist_input();
+        puts("");
+    }
+    printf("\nВывод всех сделок regists\n");
+    for (int i = 0; i < count; i++) {
+        printf("Сделка номер %d:\n", i + 1);
+        regist_output(i + 1, regists[i]);
+        puts("");
+    }
+
+    puts("\n");
+    puts("Инициализация поля Service объекта regists и вывод в консоль.");
+    puts("До инициализации.");
+    service_output(regists[0].Service);
+    regists[0].Service = service_init(10,"Удаление зуба", 5000);
+    puts("\nПосле инициализации.");
+    service_output(regists[0].Service);
+    system("pause");
+    return 0;
 }

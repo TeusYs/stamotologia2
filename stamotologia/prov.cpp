@@ -1,76 +1,50 @@
 #include "prov.h"
 
-bool SavedString(char* p)
-{
+int get_int(void) {
+	int answer;
 	int f = 0;
-	if (strpbrk(p, STR_BAN) != NULL)
-		f = 1;
-	if (p[0] == ' ')
-		f = 1;
-	if (f == 1)
-		return false;
-	else
-		return true;
-}
-
-void InputString(char* p)
-{
-	int f;
 	do {
-		f = 0;
-		fgets(p, 100, stdin);
-		if (p[0] == '\n')
-			f = 1;
-		if (f == 0)
-		{
-			p[strlen(p) - 1] = '\0';
-			if (!SavedString(p))
-				f = 1;
-		}
-		if (f == 1)
-		{
-			printf("Неверный ввод!\n");
-			printf("Повторите ввод: ");
-		}
-	} while (f == 1);
+		if (f) while (getchar() != '\n');
+		printf("Введите число: ");
+		f = 1;
+	} while (scanf("%d", &answer) == 0);
+	while (getchar() != '\n');
+	return answer;
 }
 
-bool SaveInt(char* p)
-{
+float get_float(void) {
+	float answer;
 	int f = 0;
-	if (strpbrk(p, STR_INT) != NULL)
+	do {
+		if (f) while (getchar() != '\n');
+		printf("Введите число: ");
 		f = 1;
-	if (strpbrk(p, STR) == NULL)
-		f = 1;
-	if (f == 1)
-		return false;
-	else
-		return true;
+	} while (scanf("%f", &answer) == 0);
+	while (getchar() != '\n');
+	return answer;
 }
 
-void InputInt(int* k)
-{
-	int f;
-	char p[10];
-	do {
-		f = 0;
-		scanf("%s", p);
-		if (!SaveInt(p))
-		{
-			while (getchar() != '\n');
-			f = 1;
-			printf("Неверный ввод!\n");
-			printf("Повторите ввод: ");
+char* get_string(void) {
+	int len = 0; //Реальная длина строки (изначально равна нулю, т.к. строка пуста).
+	int size = 8; //Предельный размер строки. 
+	char symbol; //Символ для чтения данных.
+	char* string = (char*)malloc(size * sizeof(char)); //Инициализация пустой строки.
+	symbol = getchar(); //Чтение данных.
+	//Цикл чтения символов, пока не встретится символ переноса строки.
+	while (symbol != 10) {
+		string[len++] = symbol; //Запись нового символа в строку.
+		//Условие, которое проверяет, вышел ли реальный размер строки за границы выделеной памяти.
+		if (len >= size) {
+			size += 8; //Увеличение предельного размера строки.
+			string = (char*)realloc(string, size * sizeof(char)); //Выделение для строки дополнительных 8 байт памяти.  
 		}
-		else
-		{
-			*k = atoi(p);
-			while (getchar() != '\n');
-		}
-	} while (f);
+		symbol = getchar(); //Чтение следуещего символа.
+	}
+	string[len] = 0; //Завершаем строку.
+	return string; //Возврат указателя на строку.
 }
-char* strcpy_d(char* str_p, const char* str_c) 
-{
+
+char* strcpy_d(char* str_p, const char* str_c) {
 	int len_p, len_c;
 	if (str_p == NULL) {
 		str_p = (char*)malloc(sizeof(char));

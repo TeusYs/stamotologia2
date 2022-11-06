@@ -4,18 +4,11 @@
 #include "service.h"
 #include "branch.h"
 
-class table
-{
-private:
-	int TableId;
-public:
-
+typedef struct {
 	client Client;
 	dentist Dentist;
 	service Service;
 	branch Branch;
-
-	//table();
-
-	//~table();
-};
+}regist;
+regist regist_input();
+void  regist_output(int, regist);

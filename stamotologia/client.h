@@ -1,3 +1,4 @@
+#pragma once
 #include "prov.h"
 typedef struct {
     int client_id;
