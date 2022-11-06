@@ -7,6 +7,8 @@ client::client(int id, string name) {
 	fio = name;
 }
 client::client() {
+	clientId = 0;
+	fio = "Имя не указано";
 }
 client::~client() {
 }
@@ -20,5 +22,5 @@ void client::InputClient() {
 
 void client::OutputClient() {
 	printf("\n<ID>\t\t<ФИО>\n");
-	cout << fio;
+	cout << clientId<<"\t\t" << fio<<endl;
 }

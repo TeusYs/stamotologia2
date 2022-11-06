@@ -9,7 +9,6 @@ private:
 public:
 	branch(int id, string street, int house);
 	branch();
-
 	~branch();
 
 	void InputBranch();

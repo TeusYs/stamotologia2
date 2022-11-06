@@ -6,6 +6,9 @@ dentist::dentist(int id, int ex, string name) {
 }
 
 dentist::dentist() {
+	fio = "Имя не указано";
+	DentistId = 0;
+	exp = 0;
 }
 
 dentist::~dentist() {

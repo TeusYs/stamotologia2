@@ -1,10 +1,15 @@
 #include "branch.h"
+
+
 branch::branch(int id, string street, int house) {
 	BranchId = id;
 	Street = street;
 	House = house;
 }
 branch::branch() {
+	BranchId = 0;
+	Street = "Улица не указана";
+	House = 0;
 }
 
 branch::~branch() {

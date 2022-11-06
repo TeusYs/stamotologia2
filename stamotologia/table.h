@@ -4,18 +4,16 @@
 #include "service.h"
 #include "branch.h"
 
-class table
+class regist
 {
 private:
-	int TableId;
-public:
-
 	client Client;
 	dentist Dentist;
 	service Service;
 	branch Branch;
-
-	//table();
-
-	//~table();
+public:
+    regist(client Cl, dentist Dn, service Sv, branch Br);
+    regist();
+    void regist_input();
+    void regist_output();
 };

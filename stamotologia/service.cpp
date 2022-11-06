@@ -1,10 +1,13 @@
 #include "service.h"
 service::service(int id, string title, int price) {
-	ServiceId == id;
+	ServiceId = id;
 	Title = title;
 	Price = price;
 }
 service::service() {
+	ServiceId = 0;
+	Title = "Название не указано";
+	Price = 0;
 }
 
 service::~service() {
