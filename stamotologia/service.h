@@ -2,6 +2,7 @@
 
 class service
 {
+	friend class regist;
 private:
 	int ServiceId;
 	int Price;
@@ -15,4 +16,5 @@ public:
 	void InputService();
 
 	void OutputService();
+	void compare_Service(service& C);
 };

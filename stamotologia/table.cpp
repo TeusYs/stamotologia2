@@ -28,3 +28,9 @@ void regist::regist_output() {
 	Service.OutputService();
 	Branch.OutputBranch();
 }
+int* regist::get_serviceprice() {
+	return &this->Service.Price;
+}
+float regist::get_summ_service_price() {
+	return (Service.Price * Client.client_counter);
+}
