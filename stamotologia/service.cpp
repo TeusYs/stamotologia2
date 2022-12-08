@@ -29,6 +29,10 @@ void service::OutputService() {
 	printf("<ID>\t\t<Услуга>\t<Цена>\n");
 	cout << ServiceId << "\t\t" << Title << "\t\t"<<Price << endl;
 }
+service& service::operator++(int) {
+	this->Price += 10000;
+	return *this;
+}
 void service::compare_Service(service& C) {
 	if (this->Price > C.Price) {
 		cout << this->Title << "Дороже";

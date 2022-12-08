@@ -16,6 +16,7 @@ public:
     regist();
     void regist_input();
     void regist_output();
+	regist operator++(int);
 	int* get_serviceprice();
 	float get_summ_service_price();
 };

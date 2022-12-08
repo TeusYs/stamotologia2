@@ -16,5 +16,6 @@ public:
 	void InputService();
 
 	void OutputService();
+	service& operator++(int);
 	void compare_Service(service& C);
 };
