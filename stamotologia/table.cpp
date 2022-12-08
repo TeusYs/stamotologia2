@@ -28,10 +28,6 @@ void regist::regist_output() {
 	Service.OutputService();
 	Branch.OutputBranch();
 }
-regist regist::operator++(int) {
-	this->Service++;
-	return *this;
-}
 int* regist::get_serviceprice() {
 	return &this->Service.Price;
 }
