@@ -6,13 +6,13 @@ int main()
 {
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
-    int count;
-    //regist regist1, * regists[3];
+    /*int count;
+    regist regist1, * regists[3];
     dentist Dentist(1,12,"Иванов А.А.");
     branch Branch(4, "Ленина",46 );
     client Client(12, "Зайцев А.Д.");
     service Service(12,"Пломба", 2000);
-    /*
+    
     regist regist3(Client, Dentist, Service,Branch );
 
     cout << "Вывод сделок, созданных конструкторами:\n" << endl;
@@ -40,15 +40,32 @@ int main()
     cout << endl;
     cout << endl;
     delete Regist;
-
     regists[0] = &regist1;
     regists[1] = &regist3;
     for (int i = 0; i < 2; i++) {
         regists[i]->regist_output();
         cout << endl;
-    } */
+    } 
     regist regist1(Client, Dentist, Service, Branch);
     regist* Regist = new regist;
     *Regist = regist1;
+    return 0;
+    */
+    service Service1, Service2;
+    Service1.OutputService();
+    puts("");
+    Service2.OutputService();
+    Service2++;
+    puts("");
+    Service2.OutputService();
+    puts("");
+    Service1.compare_Service(Service2);
+    puts("");
+    puts("");
+    regist Registss[4];
+    for (int i = 0; i < 4; i++) {
+        printf("Regists[%d] = %d\n", i, *(Registss[i].get_serviceprice()));
+        if (i < 3) for (int j = 0; j < i + 1; j++) Registss[i + 1]++;
+    }
     return 0;
 }
