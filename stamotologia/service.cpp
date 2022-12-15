@@ -15,6 +15,7 @@ service::~service() {
 
 
 void service::InputService() {
+	int price;
 	printf("Введите ID Услуги: ");
 	cin >> ServiceId;
 	while (getchar() != '\n');
@@ -22,7 +23,15 @@ void service::InputService() {
 	cin >> Title;
 	while (getchar() != '\n');
 	printf("Введите цену услуги: ");
-	cin >> Price;
+	cin >> price;
+	while (getchar() != '\n');
+	try {
+		if (price > 1000000 || price < 0) throw price;
+		Price = price;
+	}
+	catch (const int) {
+		printf("Неправильно установлена цена товара\n");
+	}
 }
 
 void service::OutputService() {

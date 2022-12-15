@@ -6,7 +6,10 @@ int main()
 {
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
-    service Service1, Service2;
+    service Service1, Service2,Service3;
+    Service3.InputService();
+    puts("");
+    Service3.OutputService();
     Service1.OutputService();
     puts("");
     Service2.OutputService();
