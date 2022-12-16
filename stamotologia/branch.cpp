@@ -15,7 +15,7 @@ branch::branch() {
 branch::~branch() {
 }
 
-void branch::InputBranch() {
+void branch::Input() {
 	printf("Введите ID Филиала: ");
 	cin >> BranchId;
 	while (getchar() != '\n');
@@ -27,7 +27,7 @@ void branch::InputBranch() {
 
 }
 
-void branch::OutputBranch() {
+void branch::Output() {
 	printf("<ID>\t\t<Адрес>\n");
 	cout << BranchId << "\t\t" << Street << House << endl;
 }

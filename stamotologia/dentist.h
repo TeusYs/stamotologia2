@@ -11,7 +11,7 @@ public:
 	dentist();
 	~dentist();
 
-	void InputDentist();
+	void Input();
 
-	void OutputDentist();
+	void Output();
 };

@@ -13,9 +13,9 @@ public:
 	client();
 	~client();	
 
-	void InputClient();
+	void Input();
 
-	void OutputClient();
+	void Output();
 	static int get_count();
 
 };

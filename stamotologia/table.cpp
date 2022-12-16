@@ -16,17 +16,17 @@ regist::regist() {
 	Service = sv;
 	Branch = br;
 }
-void regist::regist_input() {
-	Client.InputClient();
-	Dentist.InputDentist();
-	Service.InputService();
-	Branch.InputBranch();
+void regist::Input() {
+	Client.Input();
+	Dentist.Input();
+	Service.Input();
+	Branch.Input();
 }
-void regist::regist_output() {
-	Client.OutputClient();
-	Dentist.OutputDentist();
-	Service.OutputService();
-	Branch.OutputBranch();
+void regist::Output() {
+	Client.Output();
+	Dentist.Output();
+	Service.Output();
+	Branch.Output();
 }
 regist regist::operator++(int) {
 	this->Service++;

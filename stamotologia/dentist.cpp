@@ -13,7 +13,7 @@ dentist::dentist() {
 
 dentist::~dentist() {
 }
-void dentist::InputDentist() {
+void dentist::Input() {
 	printf("Введите ID массажиста: ");
 	cin >> DentistId;
 	while (getchar() != '\n');
@@ -24,7 +24,7 @@ void dentist::InputDentist() {
 	getline(cin, fio);
 }
 
-void dentist::OutputDentist() {
+void dentist::Output() {
 	printf("\n<ID>\t\t<ФИО>\t\t<Стаж>\n");
 	cout<<DentistId<<"\t\t" << fio << "\t\t" << exp << endl;
 }

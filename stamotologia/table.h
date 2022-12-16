@@ -14,8 +14,8 @@ private:
 public:
     regist(client Cl, dentist Dn, service Sv, branch Br);
     regist();
-    void regist_input();
-    void regist_output();
+    void Input();
+    void Output();
 	regist operator++(int);
 	int* get_serviceprice();
 	float get_summ_service_price();

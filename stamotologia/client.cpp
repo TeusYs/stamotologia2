@@ -14,7 +14,7 @@ client::client() {
 }
 client::~client() {
 }
-void client::InputClient() {
+void client::Input() {
 	printf("Введите ID клиента: ");
 	cin >> clientId;
 	while (getchar() != '\n');
@@ -22,7 +22,7 @@ void client::InputClient() {
 	getline(cin, fio);
 }
 
-void client::OutputClient() {
+void client::Output() {
 	printf("\n<ID>\t\t<ФИО>\n");
 	cout << clientId<<"\t\t" << fio<<endl;
 }

@@ -11,7 +11,7 @@ public:
 	branch();
 	~branch();
 
-	void InputBranch();
+	void Input();
 
-	void OutputBranch();
+	void Output();
 };

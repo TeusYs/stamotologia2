@@ -13,9 +13,9 @@ public:
 
 	~service();
 
-	void InputService();
+	void Input();
 
-	void OutputService();
+	void Output();
 	service& operator++(int);
 	void compare_Service(service& C);
 };

@@ -14,7 +14,7 @@ service::~service() {
 }
 
 
-void service::InputService() {
+void service::Input() {
 	int price;
 	printf("Введите ID Услуги: ");
 	cin >> ServiceId;
@@ -34,7 +34,7 @@ void service::InputService() {
 	}
 }
 
-void service::OutputService() {
+void service::Output() {
 	printf("<ID>\t\t<Услуга>\t<Цена>\n");
 	cout << ServiceId << "\t\t" << Title << "\t\t"<<Price << endl;
 }
