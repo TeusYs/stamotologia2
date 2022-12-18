@@ -6,25 +6,33 @@ int main()
 {
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
-    service Service1;
-    Service1.Input();
-    puts("");
-    Service1.Output();
-    regist regists[3];
-    cout << "\nИнициализация одномерного массива сделок:" << endl;
-    for (int i = 0; i < 3; i++) {
-        regists[i].Input();
-    }
-    cout << "\nВывод одномерного массива сделок:" << endl;
-    for (int i = 0; i <3; i++) {
-        regists[i].Output();
-    }
-    cout << "\nКопирование одномерного массива во вторую ячейку двумерного массива " << endl;
-    for (int i = 0; i < 3; i++)
-        regists[1][i] = regists[i];
-    cout << "\nВывод двумерного массива : " << endl;
-    for (int i = 0; i < 2; i++)
-        for (int j = 0; j < 3; j++)
-            regists[i][j].Output();
+    /*service* sv = new service;
+    More_info_Service* mrisv = new More_info_Service;
+    TempClass<float> kdifficult; //Использование шаблона.
+    cout << "Введите время: ";
+    mrisv->get_Kdifficult(kdifficult.set());
+    cout << "\nИспользование производного класса от класса service. Вывод объектов с помощью виртуальной функции" << endl << "service: ";
+    sv->Print();
+    cout << endl << "More_info_Service: ";
+    sv = mrisv;
+    sv->Print();
+    cout << endl;
+
+    cout << "\nИспользование аюстрактного класса для вывода классов service и manager:" << endl << "service: ";
+    manager* m = new manager;
+    human* h;
+    service* c = new service;
+    h = c;
+    h->output();
+    cout << "\nmanager: ";
+    h = m;
+    h->output();
+    return 0;*/
+    service pr1(13,"Gkj",1111);
+    service* prx = &pr1;  // Указатель на базовый класс
+    More_info_Service pr2(13,"ss",123,"12","22",1);
+    More_info_Service* pry = &pr2;
+    prx->Print();
+    pry->Print();
     return 0;
 }

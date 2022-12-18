@@ -1,9 +1,10 @@
+#pragma once
 #include "prov.h"
 
-class service
+class service 
 {
 	friend class regist;
-private:
+protected:
 	int ServiceId;
 	int Price;
 	string Title;
@@ -18,4 +19,5 @@ public:
 	void Output();
 	service& operator++(int);
 	void compare_Service(service& C);
+	virtual void Print();
 };

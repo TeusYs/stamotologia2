@@ -42,7 +42,8 @@ service& service::operator++(int) {
 	this->Price += 10000;
 	return *this;
 }
-void service::compare_Service(service& C) {
+void service::compare_Service(service& C)
+{
 	if (this->Price > C.Price) {
 		cout << this->Title << "Дороже";
 	}
@@ -52,4 +53,8 @@ void service::compare_Service(service& C) {
 	else {
 		cout << "\n Одинаковой стоимости" << endl;
 	}
+}
+void service::Print()
+{
+	cout << endl << "id услуги" << ServiceId;
 }

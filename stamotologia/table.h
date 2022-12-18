@@ -3,6 +3,7 @@
 #include "dentist.h"
 #include "service.h"
 #include "branch.h"
+#include "More_info_Service.h"
 
 class regist
 {
