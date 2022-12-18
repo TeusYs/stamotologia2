@@ -26,6 +26,7 @@
     <ClCompile Include="service.cpp" />
     <ClCompile Include="stomatologia.cpp" />
     <ClCompile Include="table.cpp" />
+	<ClCompile Include="More_info_Service.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="branch.h" />
@@ -34,6 +35,7 @@
     <ClInclude Include="prov.h" />
     <ClInclude Include="service.h" />
     <ClInclude Include="table.h" />
+	<ClInclude Include="More_info_Service.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

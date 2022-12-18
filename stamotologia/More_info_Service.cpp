@@ -6,7 +6,7 @@ More_info_Service::More_info_Service(int id, string title, int price, string hou
 	Price = price;
 	Hour = hour;
 	Minute = minute;
-	Kdifficult=kdifficult
+	Kdifficult = kdifficult;
 	Time = hour + ":" + minute;
 }
 
@@ -35,12 +35,12 @@ More_info_Service More_info_Service::operator=(const service& objservice) {
 	return *this;
 }
 
-float More_info_Service::get_Kdifficult() {
-	return Kdifficult
+void More_info_Service::get_Kdifficult(float Kdifficult) {
+	this->Kdifficult=Kdifficult;
 }
 
 void More_info_Service::Print()
 {
-	cout << endl << "id услуги : " << product_id;
+	cout << endl << "id услуги : " << Kdifficult;
 }
 

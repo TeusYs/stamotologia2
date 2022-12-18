@@ -3,7 +3,7 @@
 #include "service.h"
 #include "TempClass.h"
 
-class More_info_Service: service {
+class More_info_Service:public service {
 protected:
 	string Hour;
 	string Minute;
@@ -15,7 +15,7 @@ public:
 	~More_info_Service();
 
 	string get_time();
-	float get_Kdifficult();
+	void get_Kdifficult(float Kdifficukt);
 	More_info_Service operator=(const service&);
 
 	void Print();
