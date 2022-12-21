@@ -58,3 +58,6 @@ void service::Print()
 {
 	cout << endl << "id услуги" << ServiceId;
 }
+string service::get_Service_name() {
+	return Title;
+}

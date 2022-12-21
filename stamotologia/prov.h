@@ -4,6 +4,8 @@
 #define STR_INT " ~`!@#$%^&*,.()\\\"_-+=¹;:?/|[]{}<>'àáâãäå¸æçèéêëìíîïğñòóôõö÷øùúûüışÿÀÁÂÃÄÅ¨ÆÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖ×ØÙÚÛÜİŞßqwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM\n"
 #include <stdio.h>
 #include <stdlib.h>
+#include <vector>
+#include <set>
 #include <iostream>
 #include <string>
 #include <Windows.h>

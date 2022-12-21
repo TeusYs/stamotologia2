@@ -20,4 +20,5 @@ public:
 	service& operator++(int);
 	void compare_Service(service& C);
 	virtual void Print();
+	string get_Service_name();
 };
